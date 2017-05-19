@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
     res.json({ message: 'hooray! welcome to our api!' });
 });
 
-router.get('/stream/:playlistId', (req, res, next) => {
+router.get('/stream/:type/:playlistId', (req, res, next) => {
   StreamService.handle('GET', req, res, next);
 });
 
