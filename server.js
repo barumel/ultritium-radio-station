@@ -2,7 +2,6 @@ const Express = require('express');
 const bodyParser = require('body-parser');
 const RadioStream = require('ultritium-radio-stream');
 const express = Express();
-const StreamHandler = require('./lib/stream/handler');
 const StreamService = require('./lib/service/stream/stream');
 const PlaylistService = require('./lib/service/playlist/playlist');
 const PlaylistItemService = require('./lib/service/playlistitem/playlistitem');
