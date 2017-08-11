@@ -53,6 +53,10 @@ router.get('/user/:id', (req, res, next) => {
   UserService.handle('GET', req, res, next);
 });
 
+router.put('/user/:id', (req, res, next) => {
+  UserService.handle('PUT', req, res, next);
+});
+
 router.post('/auth', (req, res, next) => {
   AuthService.handle('POST', req, res, next);
 });
