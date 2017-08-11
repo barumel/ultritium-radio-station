@@ -9,6 +9,7 @@ const mongoose   = require('mongoose');
 const _ = require('lodash');
 const cors = require('cors');
 
+const UserService = require('./lib/service/user/user');
 const StreamService = require('./lib/service/stream/stream');
 const PlaylistService = require('./lib/service/playlist/playlist');
 const PlaylistItemService = require('./lib/service/playlistitem/playlistitem');
@@ -44,11 +45,15 @@ const router = Express.Router();
 //express.use(passport.authenticate('bearer', { session: false }));
 //express.use(AuthenticateMiddleware.handle());
 
+router.post('/user', (req, res, next) => {
+  UserService.handle('POST', req, res, next);
+});
+
 router.post('/auth', (req, res, next) => {
   AuthService.handle('POST', req, res, next);
 });
 
-router.delete('/auth', (req, res, next) => {
+router.delete('/auth/:id', (req, res, next) => {
   AuthService.handle('DELETE', req, res, next);
 });
 
